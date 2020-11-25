@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>Jquery</title>
+		<script src="jquery.min.js"></script> 
+		
+	</head>
+	<body>
+		<p></p>
+		<script>
+		$.ajax("info.txt").done(function(data){
+		$("p").html(data);
+		})
+		</script>
+	</body>
+</html>

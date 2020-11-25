@@ -1,0 +1,23 @@
+
+<html>
+	<head>
+		<title>Jquery</title>
+		<script src="jquery.min.js"></script> 
+		<script src="jquery-ui/jquery-ui.js"></script>
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+	</head>
+	<body>
+		 <div id="dragable" style="width:300px; height: 300px; background-color: yellow; ">
+		 </div><br>
+		 <div id ="dropable" style="width:400px; height: 400px; background-color: blue; ">
+		 </div>
+		<script>
+			$("#dragable").draggable();
+			$("#dropable").droppable({
+			  drop: function( event, ui ) {
+				console.log(event);
+			  }
+			});
+		</script>
+	</body>
+</html>

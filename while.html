@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Java Script</title>
+		
+	</head>
+	<body>
+		<p>How many Fingers are you holding up</p>
+		<p>
+			<select id="mynumber" style="width: 100px;">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+		</p>
+		<p><button id="guess">guess</button>
+		<script type="text/javascript">
+			document.getElementById("guess").onclick = function()
+			{
+				var mynumber = document.getElementById("mynumber").value;
+				var guessnumber = "";
+				var gotit = false;
+				var numberofguess = 1;
+				while(gotit == false)
+				{
+					guessnumber = Math.random();
+					guessnumber = guessnumber * 6;
+					guessnumber = Math.floor(guessnumber);
+					if(mynumber == guessnumber)
+					{
+						gotit = true;
+						alert("GOT IT! IT WAS A " + mynumber + "IT TOOK ME " + numberofguess + ".guessed");
+					}
+					else
+					{
+						numberofguess++;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

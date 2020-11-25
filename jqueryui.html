@@ -1,0 +1,25 @@
+
+<html>
+	<head>
+		<title>Jquery</title>
+		<script src="jquery.min.js"></script> 
+		<script src="jquery-ui/jquery-ui.js"></script>
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+	</head>
+	<body>
+		 <div id="first" style="width:400px; height: 400px; background-color: yellow; ">
+		 <span>I'm stuck in the box</span></div><br>
+		 <div id ="second" style="width:400px; height: 400px; background-color: blue; ">
+		 <span>I'm stuck in the box</span></div>
+		<script>
+			$("span").draggable({containment:"parent"});
+			$( "#first" ).resizable({grid:50,alsoResize:"#second", resize: function(event, ui){
+			if($("#first").width() > 300){
+			alert("big");
+			}
+			}
+			});
+			$("#second").resizable();
+		</script>
+	</body>
+</html>

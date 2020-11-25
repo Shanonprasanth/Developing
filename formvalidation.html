@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<title>Jquery</title>
+		<script src="jquery.min.js"></script> 
+		<style type = "text/css">
+			body{
+				font-size:100%;
+			}
+			input{
+				padding: 5px 5px 10px 5px;
+				font-size: 16px;
+				border-radius: 5px;
+				border: 1px solid black;
+				width:320px;
+			}
+			label{
+				position: relative;
+				top:4px;
+				width: 200px;
+				float: left;
+			}
+			#wrapper{
+				width: 550px;
+				margin:0 auto;
+			}
+			.form-element{
+				margin-bottom: 10px;
+			}
+			#red{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "wrapper">
+		<div class= "form-element"> 
+		<label for = "name">Name</label>
+		<input type = "text" name = "name" id = "name" placeholder = "Eg.Name">
+		</div>
+		<div class= "form-element"> 
+		<label for = "email">Email</label>
+		<input type = "text" name = "email" id = "email" placeholder = "Eg.Email">
+		</div>
+		<div class= "form-element"> 
+		<label for = "mobile">Mobile</label>
+		<input type = "text" name = "mobile" id = "mobile" placeholder = "Eg.0123456789">
+		</div>
+		<div class= "form-element"> 
+		<label for = "password">Password</label>
+		<input type = "password" name = "password" id = "password">
+		</div>
+		<div class= "form-element"> 
+		<label for = "confirmpassword">Confirm Password</label>
+		<input type = "password" name = "confirmpassword" id = "confirmpassword">
+		</div>
+		<div class= "form-element"> 
+		
+		<input type = "submit" id = "submitButton" value = "sign up">
+		</div>
+		<div id="errorMessage"></div>
+		<div id="success"></div>
+		<script type="text/javascript">
+			function isEmail(email) 
+			{
+			  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			  return regex.test(email);
+			}
+			$("#submitButton").click(function()
+			{
+				var errorMessage = "";
+				var fieldmissing = "";
+				if($("#email").val() == "")
+				{
+					fieldmissing += "<p>Name Fied is missing,</p>";
+				}
+				if($("#mobile").val() == "")
+				{
+					fieldmissing += "<p>mobile Fied is missing,</p>";
+				}
+				if($("#password").val() == "")
+				{
+					fieldmissing += "<p>password Fied is missing,</p>";
+				}
+				if($("#confirmpassword").val() == "")
+				{
+					fieldmissing += "<p>confirmpassword Fied is missing,</p>";
+				}
+				if(fieldmissing != "")
+				{
+					errorMessage += "<p>Following Fields Missing:</p>" + fieldmissing ;
+				}
+				if(isEmail($("#email").val()) == false)
+				{
+					errorMessage += "Your Email is not valid,";
+				}
+				if($.isNumeric($("#mobile").val()) == false)
+				{
+					errorMessage += "Your Mobile is not valid, ";
+				}
+				if($("#password").val() != $("#confirmpassword").val())
+				{
+					errorMessage += "Your password is does not match, ";
+				}
+				if(errorMessage != "")
+				{
+					$("#errorMessage").html(errorMessage);
+				}
+				else
+				{
+					$("#success").html("Successfully updated");
+				}
+			});
+		</script>
+	</body>
+</html>

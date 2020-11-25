@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Java Script</title>
+		
+	</head>
+	<body>
+		<div id="tweetdiv"></div>
+			<script type="text/javascript">
+				var tweetstring = "";
+				var tweet = ["Prasanth","Ramya","balaji","meena","swathi","raji","gokul","hash"];
+				for(var i = 0; i<tweet.length; i++)
+				{
+					tweetstring = tweetstring + "<p>" + tweet[i];
+					
+				}
+				document.getElementById("tweetdiv").innerHTML = tweetstring;
+			</script>
+	</body>
+</html>

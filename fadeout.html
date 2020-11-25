@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Jquery</title>
+		<script src="jquery.min.js"></script> 
+		<style type = "text/css">
+			#hidden{
+			display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Hi Prasanth</p>
+		<button id="fadeout">Fadeout</button>
+		
+		<script>
+			$("#fadeout").click(function()
+			{
+				if($("p").css("display") == "none")
+				{
+					$("p").fadeIn("slow");
+					$("#fadeout").text("fadeout");
+				}
+				else
+				{
+					$("p").fadeOut("slow");
+					$("#fadeout").text("fadein");
+				}
+			});
+			
+		</script>
+	</body>
+</html>

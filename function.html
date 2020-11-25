@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Java Script</title>
+		
+	</head>
+	<body>
+		<p>How many Fingers are you holding up</p>
+		<p>
+			<select id="mynumber" style="width: 100px;">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+		</p>
+		<p><button id="guess">guess</button>
+		<script type="text/javascript">
+			function domyguess(correctanswer)
+			{
+				var guessnumber = guessnumber = Math.random();
+					guessnumber = guessnumber * 6;
+					guessnumber = Math.floor(guessnumber);
+					if(guessnumber == correctanswer)
+					{
+						return(true);
+					}
+					else
+					{
+						return(false);
+					}
+			}
+			document.getElementById("guess").onclick = function()
+			{
+				var mynumber = document.getElementById("mynumber").value;
+				var gotit = false;
+				var numberofguess = 1;
+				while(gotit == false)
+				{
+					if(domyguess(mynumber) == true)
+					{
+						gotit = true;
+						alert("Got It! It was a" + mynumber + ". It Took as " + numberofguess + "guesses");
+					}
+					else
+					{
+						numberofguess++;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

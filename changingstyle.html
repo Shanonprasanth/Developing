@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Jquery</title>
+		<script src="jquery.min.js"></script> 
+		<style type = "text/css">
+		#circle{
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			background-color: green;
+			margin:10px;
+		}
+		#squre{
+			width: 150px;
+			height: 150px;
+			background-color: red;
+			margin:10px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id ="circle"></div>
+		<div id ="squre"></div>
+		<div id ="squre"></div>
+		<script>
+			$("div").click(function()
+			{
+				$(this).css("background-color", "blue");
+			})
+		</script>
+	</body>
+</html>
